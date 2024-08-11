@@ -1,0 +1,50 @@
+﻿#wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+#head_title {
+    text-align: center;
+    color: aqua;
+    font-size: 8em;
+    position: relative;
+    transform: skew(10deg, -10deg) translateX(0);
+    padding-bottom: 20px;
+    z-index: 2 !important
+}
+
+#head_title::after,
+#head_title::before {
+    content: "OOPS!";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute
+}
+
+#head_title::after {
+    top: -20px;
+    left: -20px;
+    color: #fb8f83;
+    z-index: 1 !important
+}
+
+#head_title::before {
+    top: -40px;
+    left: -40px;
+    z-index: 3 !important;
+    color: #000
+}
+
+p {
+    padding-bottom: 20px
+}
+
+#body_title {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700
+}

@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Bỏ qua các yêu cầu tới thư mục tải lên
+RewriteCond %{REQUEST_URI} ^/upload/ [NC]
+RewriteRule ^ - [L]
+
+# Chuyển hướng yêu cầu đến trang chủ nếu URL không phải là tài nguyên
+RewriteCond %{HTTP_HOST} ^common\.vuvuvuvvv-professional\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/media/.*$ [NC]
+RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|css|js|pdf)$ [NC]
+RewriteRule ^(.*)$ https://vuvuvuvvv-professional.com/ [L,R=301]
